@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="email-validation">
+            <i class="fa-solid fa-x"></i>
+            <svg width="90" height="90" fill="#E65A65" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                <path
+                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" />
+            </svg>
+            <h2>Email is not verified</h2>
+            <p>Please verify your email address</p>
+            <button>Verify Now</button>
+        </div>
+        <div class="left-container">
+            <img src="images/secondwoman.jpeg" alt="feme-logo" class="woman">
+            <img src="images/fem-logo.png" alt="" class="logo">
+            <div class="feme-content">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <form>
+                <div class="form-box">
+                    <h2>Create your account</h2>
+
+                    <div class="input-info">
+                        <div>
+                            <label for="" class="sign" id="sign">First Name</label>
+                            <input type="text" name="first-name" placeholder="First Name" required>
+                            <p class="validation">Validate First Name</p>
+                        </div>
+                        <div>
+                            <label for="" class="sign" id="sign">Last Name</label>
+                            <input type="text" name="last-name" placeholder="Last Name" required>
+                            <p class="validation">Validate Last Name</p>
+                        </div>
+                    </div>
+
+                    <div class="input-info">
+                        <div>
+                            <label for="" class="sign" id="sign">Email Address</label>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                            <p class="validation">Validate Email</p>
+                        </div>
+                        <div>
+                            <label for="" class="sign" id="sign">Phone Number</label>
+                            <input type="text" name="phone-number" placeholder="Phone Number" required>
+                            <p class="validation">Validate Phone Number</p>
+                        </div>
+                    </div>
+
+                    <div class="login-box">
+                        <div>
+                            <label for="" class="sign" id="sign">Password</label>
+                            <input type="password" name="password" placeholder="Password" required>
+                            <p class="validation">Validate Password</p>
+                        </div>
+
+                        <div>
+                            <label for="" class="sign" id="sign">Confirm Password</label>
+                            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+                            <p class="validation">Validate Confirm Password</p>
+                        </div>
+                    </div>
+
+                    <div class="options">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="terms-checkbox">
+                            <label for="terms-checkbox">I agree with the <a href="">Terms and Conditions</a></label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-btn">Create</button>
+
+                    <div class="create-link">Already have an account? <a href="login.html">Login</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const sign = document.querySelectorAll("#sign");
+    const inputs = document.querySelectorAll("input[type='email'], input[type='password'], input[type='text']");
+    const placeholder = document.querySelectorAll("input[type='email']::placeholder, input[type='password']::placeholder, input[type='text']::placeholder");
+    inputs.forEach((input, index) => {
+        input.addEventListener("focus", function () {
+            sign[index].classList.add("active");
+        });
+        input.addEventListener("blur", function () {
+            if (this.value === "") {
+                sign[index].classList.remove("active");
+            }
+        });
+    });
+</script>
